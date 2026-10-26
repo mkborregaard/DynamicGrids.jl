@@ -102,9 +102,13 @@ _example_writeval(grid::GridData{<:WriteMode}, I) = grid[I...]
 
 # _zerogrids
 # Generate a Vector of zero valued grids
-_zerogrids(initgrid::AbstractArray, length) = [zero(initgrid) for f in 1:length]
+_zerogrids(initgrid::AbstractArray, length) = [_zerogrid(initgrid) for f in 1:length]
 _zerogrids(initgrids::NamedTuple, length) =
-    [map(grid -> zero(grid), initgrids) for f in 1:length]
+    [map(_zerogrid, initgrids) for f in 1:length]
+
+# Base.zero(::AbstractArray) calls zero on each element since Julia 1.12,
+# which fails for element types that only define zero(::Type)
+_zerogrid(grid::AbstractArray{T}) where T = fill!(similar(grid, typeof(zero(T))), zero(T))
 
 # _asiterable
 # Return some iterable value from a 
