@@ -20,7 +20,7 @@ permissions:
 env:
   UPSTREAM_URL: https://github.com/cesaraustralia/DynamicGrids.jl.git
   UPSTREAM_BRANCH: dev
-  MIRROR_BRANCH: upstream-dev
+  MIRROR_BRANCH: dev
   MAINTAINED_BRANCH: maintained
 
 jobs:
