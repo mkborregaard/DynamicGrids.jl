@@ -1,6 +1,6 @@
 using DynamicGrids, DimensionalData, Dates, Test
 using DynamicGrids: isshowable, frameindex, storeframe!, SimData, stoppedframe
-using DimensionalData.LookupArrays, DimensionalData.Dimensions
+using DimensionalData.Lookups, DimensionalData.Dimensions
 
 # Mostly outputs are tested in integration.jl
 @testset "Output construction" begin

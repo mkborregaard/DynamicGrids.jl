@@ -29,7 +29,7 @@ Reexport.@reexport using ModelParameters
 
 import ModelParameters.Flatten
 
-using DimensionalData.LookupArrays, DimensionalData.Dimensions
+using DimensionalData.Lookups, DimensionalData.Dimensions
 
 const DG = DynamicGrids
 const DD = DimensionalData

@@ -2,7 +2,7 @@ using DynamicGrids, Dates, DimensionalData, Setfield, Unitful, Test, Dimensional
 using Unitful: d
 using DynamicGrids: SimData, Extent, _calc_auxframe
 const DG = DynamicGrids
-using DimensionalData.Dimensions, DimensionalData.LookupArrays
+using DimensionalData.Dimensions, DimensionalData.Lookups
 
 @testset "Aux" begin
     @testset "aux sequence" begin
