@@ -126,7 +126,10 @@ function maprule!(
     data::RuleData, proc::ThreadedCPU, opt, ruletype::Val{<:NeighborhoodRule}, rule, rkeys, wkeys
 )
     hoodgrid = _firstgrid(data, rkeys)
-    map_with_optimisation(data, proc, opt, ruletype, rkeys) do I
+    # Like SingleCPU, run every cell: the block-sparse path only visits blocks that are
+    # already active, so it skips cells a stencil would spread into from neighboring blocks.
+    # Writes still update the block status for later rules.
+    map_with_optimisation(data, proc, NoOpt(), ruletype, rkeys) do I
         stencil_kernel!(data, hoodgrid, ruletype, rule, rkeys, wkeys, Tuple(I)...)
     end
     return nothing
