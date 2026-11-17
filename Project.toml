@@ -49,6 +49,7 @@ FileIO = "1"
 FixedPointNumbers = "0.8"
 FreeTypeAbstraction = "^0.6.5, 0.8, 0.9, 0.10"
 ImageMagick = "1"
+ImageMagick_jll = "7.1.2029"
 KernelAbstractions = "0.9"
 LinearAlgebra = "1"
 Makie = "0.22, 0.23, 0.24"
@@ -73,10 +74,12 @@ CUDA = "052768ef-5323-5732-b1bb-66c8b64840ba"
 ColorSchemes = "35d6a980-a343-548e-a6ea-1d62b119f2f4"
 FixedPointNumbers = "53c48c17-4a7d-5ca2-90c5-79b7896eea93"
 ImageMagick = "6218d12a-5da1-5696-b52f-db25d2ecc6d1"
+# Only to keep the resolver off the ImageMagick_jll 7.1.2001 build, which fails to load
+ImageMagick_jll = "c73af94c-d91f-53ed-93a7-00f77d67a9d7"
 SafeTestsets = "1bc83da4-3b8d-516f-aca4-4fe02f6d838f"
 StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
 Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 WGLMakie = "276b4fcb-3e11-5398-bf8b-a0c2d153d008"
 
 [targets]
-test = ["Aqua", "BenchmarkTools", "ColorSchemes", "CUDA", "FixedPointNumbers", "ImageMagick", "SafeTestsets", "StaticArrays", "Unitful", "WGLMakie"]
+test = ["Aqua", "BenchmarkTools", "ColorSchemes", "CUDA", "FixedPointNumbers", "ImageMagick", "ImageMagick_jll", "SafeTestsets", "StaticArrays", "Unitful", "WGLMakie"]
